@@ -4,15 +4,16 @@ var LocalEx = require('./modules/local.js');
 (window.onLoad = function() {
 	var	localForm = document.getElementById('localForm'),
 		localInput = document.getElementById('localInput'),
-		localButton = document.getElementById('localButtonClean');
-		storageName = 'localText',
+		localButton = document.getElementById('localButtonClean'),
+		localStorageName = 'localText',
 		localHeading = document.getElementById('localText'),
-		localText = localStorage.getItem('localText');
+		localText = localStorage.getItem(localStorageName);
 
-	LocalEx.localSave(localForm, localInput, storageName);
-	LocalEx.localClear(localButton);
+	LocalEx.localSave(localForm, localInput, localStorageName, localHeading);
+	LocalEx.localClear(localButton, localHeading, localText);
 	LocalEx.setTextToHeadline(localHeading, localText);
 
+	
 	var sessionForm = document.getElementById('sessionForm'),
 		inputName = document.getElementById('sessionInputName'),
 		inputLastName = document.getElementById('sessionInputLastName'),

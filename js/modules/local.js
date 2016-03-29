@@ -5,26 +5,22 @@ module.exports = (function() {
 		setTextToHeadline: setTextToHeadline
 	};
 
-	function localSave(form, input, storageName) {
+	function localSave(form, input, localStorageName, h1) {
 		form.addEventListener('submit', function(e) {
 			var inputValue = input.value;
-			
-			e.preventDefault();
 
-			localStorage.setItem(storageName, inputValue);
+			e.preventDefault();
+			localStorage.setItem(localStorageName, inputValue);
 
 			input.value = '';
-
-			setTextToHeadline();
+			setTextToHeadline(h1, inputValue);
 		});
 	}
 	
-	function localClear(button) {
+	function localClear(button, h1, localText) {
 		button.addEventListener('click', function() {
-			
 			localStorage.clear();
-
-			setTextToHeadline();
+			setTextToHeadline(h1, localText);
 		});
 	}
 
