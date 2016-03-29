@@ -1,0 +1,23 @@
+{
+  "name": "storage",
+  "description": "Playing with Local/Session Storage & Modules",
+  "version": "1.0.0",
+  "scripts": {
+    "build-js": "browserify ./js/main.js -o script.js",
+    "watch-js": "watchify ./js/main.js -o script.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@gitlab.com/jppag/storage.git"
+  },
+  "author": "João Pedro Pagnoncelli",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://gitlab.com/jppag/storage/issues"
+  },
+  "homepage": "https://gitlab.com/jppag/storage#README",
+  "devDependencies": {
+    "browserify": "^13.0.0",
+    "watchify": "^3.7.0"
+  }
+}
